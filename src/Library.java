@@ -15,6 +15,12 @@ public class Library {
             }
         }
     }
+    public void listPatrons() {
+        System.out.println("Patrons Members:");
+        for (Patron patron : patronArrayList) {
+            System.out.println(patron.getName());
+        }
+    }
 
     public void addBook(Book book){
         bookArrayList.add(book);
