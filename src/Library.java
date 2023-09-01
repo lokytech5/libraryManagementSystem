@@ -7,6 +7,15 @@ public class Library {
 
     private boolean isAvailable;
 
+    public void listAvailableBooks() {
+        System.out.println("List of available books:");
+        for (Book book : bookArrayList) {
+            if (book.isAvailable()) {
+                System.out.println(book.getTitle());
+            }
+        }
+    }
+
     public void addBook(Book book){
         bookArrayList.add(book);
     }

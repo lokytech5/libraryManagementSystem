@@ -1,4 +1,4 @@
-public class Book {
+public class Book implements Borrowable {
     private String title;
     private String genre;
     private String author;
@@ -11,6 +11,23 @@ public class Book {
         this.author = author;
         this.ISBN = ISBN;
         this.isAvailable = isAvailable;
+    }
+
+    @Override
+    public void borrow() {
+        if(isAvailable()){
+            setAvailable(false);
+            System.out.println("Book " + getTitle() + "has been borrowed");
+        } else {
+            System.out.println("Sorry, the book '" + getTitle() + "'is not available for borrowing");
+        }
+    }
+
+    @Override
+    public void returnBook() {
+        setAvailable(true);
+        System.out.println("Book '" + getTitle() + "has been returned. ");
+
     }
 
 
@@ -62,4 +79,6 @@ public class Book {
                 "ISBN: " + getISBN() + "\n" +
                 "Availability: " + (isAvailable() ? "Available" : "Not Available");
     }
+
+
 }
