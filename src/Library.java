@@ -3,9 +3,12 @@ import java.util.ArrayList;
 public class Library {
     ArrayList<Book> bookArrayList = new ArrayList<>();
     ArrayList<Patron> patronArrayList = new ArrayList<>();
-
-
     private boolean isAvailable;
+
+    public Library(ArrayList<Book> books, ArrayList<Patron> patrons) {
+        bookArrayList.addAll(books);
+        patronArrayList.addAll(patrons);
+    }
 
     public void listAvailableBooks() {
         System.out.println("List of available books:");

@@ -23,12 +23,16 @@ public class Main {
                 20,"+222-67890232",
                 2);
 
-        Library library = new Library();
+        ArrayList<Book> books = new ArrayList<>();
+        ArrayList<Patron> patrons = new ArrayList<>();
+
+        Library library = new Library(books, patrons);
         //Adding books to the library
         library.addBook(book1);
         library.addBook(book2);
         library.addBook(book3);
 
+        System.out.println("Setting available books");
         library.setAvailable(book1.isAvailable());
         library.setAvailable(book2.isAvailable());
         library.setAvailable(book3.isAvailable());
