@@ -61,8 +61,6 @@ public class Main {
 
         //Patron2 is trying to borrow book1.
 
-
-
         // Simulate borrowing a book by a patron
         System.out.println("Borrowing a book by James:");
         library.borrowedBook(patron1, book1);

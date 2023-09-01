@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Patron {
+public class Patron implements PatronBook {
     private String name;
     private int Id;
     private int age;
@@ -24,6 +24,7 @@ public class Patron {
 
 
 
+    @Override
     public boolean borrowBook(Book book){
         if (!canBorrow()) {
             System.out.println(getName() + " has reached the borrowing limit and cannot borrow more books.");
@@ -40,6 +41,7 @@ public class Patron {
         return false;
     }
 
+    @Override
     public void returnedBook(Book book){
         if (borrowedBooks.contains(book)) {
             borrowedBooks.remove(book);
